@@ -1,0 +1,20 @@
+{
+    "development": {
+        "db": {
+            "username": "licenta",
+            "password": "lic",
+            "database": "db_licenta",
+            "host": "localhost",
+            "dialect": "mysql"
+        }
+    },
+    "production": {
+        "db": {
+            "username": "licenta",
+            "password": "lic",
+            "database": "db_licenta",
+            "host": "localhost",
+            "dialect": "mysql"
+        }
+    }
+}
