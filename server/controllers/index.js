@@ -1,11 +1,13 @@
 const auth = require("./auth")
 const training = require("./training")
 const intermediar = require("./intermediar")
+const personal_trainings = require("./personal_trainings")
 
 const controllers = {
     auth,
     training,
-    intermediar
+    intermediar,
+    personal_trainings
 }
 
 module.exports = controllers

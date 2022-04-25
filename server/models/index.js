@@ -6,6 +6,7 @@ const ComunitateModel = require("./comunitate")
 const TrainingModel = require("./training")
 const TrainingFeedbackModel = require("./training_feedback")
 const IntermediarModel = require("./intermediar")
+const PersonalTrainingsModel = require("./personal_trainings")
 
 const User = UserModel(db, Sequelize)
 const MemberInfo = MemberInfoModel(db, Sequelize)
@@ -13,6 +14,7 @@ const Comunitate = ComunitateModel(db, Sequelize)
 const Training = TrainingModel(db, Sequelize)
 const TrainingFeedback = TrainingFeedbackModel(db, Sequelize)
 const Intermediar = IntermediarModel(db, Sequelize)
+const PersonalTrainings = PersonalTrainingsModel(db, Sequelize)
 
 module.exports = {
     User,
@@ -20,5 +22,6 @@ module.exports = {
     Comunitate,
     Training,
     TrainingFeedback,
-    Intermediar
+    Intermediar,
+    PersonalTrainings
 }
