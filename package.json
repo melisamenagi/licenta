@@ -12,19 +12,28 @@
     "eslint": "^8.9.0",
     "express": "^4.17.2",
     "express-session": "^1.17.2",
+    "gh-pages": "^3.2.3",
+    "homepage": "https://melisamenagi.github.io/licenta",
     "mysql2": "^2.3.3",
     "passport": "^0.5.2",
     "passport-google-oauth20": "^2.0.0",
     "react": "^17.0.2",
     "react-redux": "^7.2.6",
     "react-router-dom": "^6.2.1",
+    "react-scripts": "^5.0.1",
     "redux": "^4.1.2",
     "sequelize": "^6.15.0",
     "vercel": "^24.1.0"
   },
   "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "predeploy": "npm run build",
+   "deploy": "gh-pages -d build",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
   },
   "repository": {
     "type": "git",
