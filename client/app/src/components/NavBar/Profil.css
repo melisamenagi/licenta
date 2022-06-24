@@ -1,0 +1,40 @@
+.profil-container {
+    background-image: url('../../assets/fundal-profil.png');
+    background-size: cover;
+    background-repeat: no-repeats;
+    height: 92vh;
+}
+
+.info-container {
+    /* margin-top: 100px; */
+    display: flex;
+    flex-direction: column;
+    padding-top: 100px;
+    padding-left: 150px;
+}
+
+.info {
+    display: flex;
+    flex-direction: row;
+    /* gap: 50px; */
+}
+
+/* .departamente {
+    display: flex;
+    justify-content: center;
+    /* gap: 100px; 
+}  */
+
+.h2-profile {
+    color: #068FE2;
+    /* margin-right: 50px; */
+    /* flex-basis: 200px; */
+    width: 250px;
+}
+
+.buton-hr {
+    margin-top: 50px;
+    font-family: Nunito;
+}
+
+

@@ -1,0 +1,49 @@
+.container-feedback {
+    display: flex;
+    flex-direction: row;
+    align-content: flex-start;
+    margin: 0px;
+    padding: 0px;
+}
+
+.img-feedback {
+    height: 100vh;
+    width: 50vw;
+}
+
+.form-feedback {
+    padding-left: 50px;
+}
+
+label>div{
+    padding: 10px 0px;
+}
+
+input {
+    width: 200px;
+    height: 30px;
+    border: 1px solid #00043A;
+    box-sizing: border-box;
+    border-radius: 3px;
+}
+
+input[type=text], textarea {
+    font-family: Nunito;
+    color: #00043A;
+    outline-color: #A3D5FF;
+}
+
+textarea:focus, input[type=text]:focus {
+    box-shadow: 0 0 10px #719ECE;
+}
+
+input[type=text]::placeholder {
+    font-family: Nunito;
+    color: #3B6799;
+}
+
+.raport {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}

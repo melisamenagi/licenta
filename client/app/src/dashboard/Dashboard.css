@@ -1,0 +1,7 @@
+.dashboard-container {	
+    height: 92vh;
+    width: 100%;
+    background-image: url('../assets/dashboard-01.png');
+    background-size: cover;
+    background-repeat: no-repeats;
+}

@@ -1,0 +1,55 @@
+img{
+    height:45px;
+}
+
+.links {
+   font-family: Nunito;
+   font-style: normal;
+   font-size: 20px;
+   color: #FFFFFF;
+   list-style-type: none;
+}
+.links:hover{
+   color: #FFFFFF;   
+   text-shadow: 0px 0px 9px #FFFFFF;
+
+}
+
+.navbar {
+   background: #0C0C0C;
+   height: 60px;
+   display: flex;
+   justify-content: space-around;
+   align-items: center;
+   position: sticky;
+   border-radius: 0px 0px 50px 50px;
+
+}
+
+.logoutbutton{
+   font-family: Nunito;
+   font-size: 20px;
+   font-weight: bolder;
+   color: #A3D5FF;
+   display: inline-block;
+   transition-duration: 0.4s;
+   /* border: none; */
+   background: #0C0C0C;
+   /* border: 3px solid #A3D5FF;
+   box-sizing: border-box;
+   border-radius: 5px; */
+   border: none;
+}
+
+.logoutbutton:hover {
+   color: #84D6FF;
+   text-decoration: underline;
+   font-size: 20px;
+   font-weight: bolder;
+   text-shadow: 0px 0px 9px #84D6FF;
+}
+
+li{
+   display: inline;
+   padding: 20px;
+}

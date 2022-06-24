@@ -1,0 +1,33 @@
+.departamente-container {
+    width: 100vw;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    row-gap: 10px;
+}
+
+.departamente-item {
+    width: 350px;
+    height:  350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #9489FA;
+}
+
+.departamente-item:hover {
+    width: 350px;
+    height:  350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #7900FF;
+    background-color: #D6F1FF;
+}
+
+.departamente-link {
+    color: #3B39B1;
+    font-size: 20px;
+    font-weight: regular;
+    font-family: Nunito;
+}
