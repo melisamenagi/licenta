@@ -42,7 +42,7 @@ const controller = {
                         ]
                     },
                     {
-                        functie: 'O'
+                        functie_id: 'O'
                     }
                 ]
             }

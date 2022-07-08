@@ -68,7 +68,12 @@ function Navbar () {
             </li>
             <li>
                 <NavLink className='links' to='/dashboard/departamente' style={{textDecoration: 'none'}}>Departamente</NavLink>
-            </li></>}
+            </li>
+            <li>
+                <NavLink className='links' to='/dashboard/indicators' style={{textDecoration: 'none'}}>Indicatori</NavLink>
+            </li>
+            </>
+          }
           {functie_id==='R' && <li><NavLink className='links' to='/recrutare' style={{textDecoration: 'none'}}>Recrutare</NavLink></li>}
           <li>
             <NavLink className="links" to="/dashboard/profil" style={{ textDecoration: 'none' }}>Profil</NavLink>

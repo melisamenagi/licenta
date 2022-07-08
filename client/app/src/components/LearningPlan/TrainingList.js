@@ -48,7 +48,7 @@ function TrainingList(props){
     return(
         <div className="list">
             <h1>Traininguri</h1>
-            {currentUser.functie_id === 'C'||currentUser.functie_id === 'D' ? <button onClick={handleAdd}>Adauga training</button>: <></>}
+            {currentUser.functie_id !== 'O' && <button onClick={handleAdd}>Adauga training</button>}
             {isClicked && 
             <div className="training-form">
                     <input

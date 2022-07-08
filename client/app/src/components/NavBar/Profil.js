@@ -2,18 +2,74 @@ import React from "react"
 import { Link } from 'react-router-dom'
 import { store } from "../../features/store"
 import { useDispatch, useSelector } from "react-redux"
+import { useEffect, useState } from 'react'
 import Navbar from "./Navbar"
 import "./Profil.css"
 import { startFeedbackIntermediar } from "../../features/sessionSlice"
+import Axios from 'axios'
 
 function Profil(){
     const currentUser = useSelector(state => store.getState().user)
     const isLoggedIn = useSelector(state => store.getState().isLoggedIn)
     console.log(currentUser)
     const dispatch = useDispatch();
+    const [entitate, setEntitate] = useState("")
+    const [isNPS, setIsNPS] = useState(false)
+    const [NPS, setNPS] = useState(0)
 
-    const handleClick = () => {
-        dispatch(startFeedbackIntermediar())
+    useEffect(() => {
+        if(currentUser.functie_id !== 'O') {
+            if(currentUser.functie_id === 'C') {
+                setEntitate(currentUser.comunitate)
+            } else if(currentUser.functie_id === 'D') {
+                setEntitate(currentUser.first_department)
+            } else {
+                setEntitate("VIP")
+            }
+        }
+    }, [])
+
+    const handleClickHR = () => {
+        // dispatch(startFeedbackIntermediar())
+        Axios.post(`http://localhost:3001/api/indicator/${entitate}`, {
+            indicator: "eNPS"
+        }).then(response => {
+            console.log(response.data)
+            // getFeedback()
+        }).catch(err => console.log(err))    
+    }
+
+    const handleClickLaunch = () => {
+        Axios.post(`http://localhost:3001/api/indicator/${entitate}`, {
+            indicator: "eNPS"
+        }).then(response => {
+            console.log(response.data)
+            // getFeedback()
+        }).catch(err => console.log(err))    
+    }
+
+    const handleClickView = () => {
+        Axios.get(`http://localhost:3001/api/indicator/management/${entitate}/eNPS`).then(response => {
+            const feedback = response.data
+            console.log(response.data)
+            let scoruri = feedback.map(f => f.scor)
+            let count = 0
+            let promoters = 0
+            let detractors = 0
+            scoruri.forEach(element => {
+                if(element >= 9) {
+                    promoters++
+                } else if(element <=6) {
+                    detractors++
+                }
+                count++
+            });
+            let procent = (promoters/count * 100) - (detractors/count * 100)
+            setIsNPS(true)
+            setNPS(procent.toFixed(1))
+            // console.log(tema,speakerFb,raport, suma, count, medie)
+        })
+        .catch(err => console.log(err))
     }
 
     return(
@@ -39,8 +95,19 @@ function Profil(){
                         <h2>{currentUser.proiect}</h2>
                     </div>
                     <div className="info">
-                    {currentUser.functie_id==='HR' && 
-                        <button onClick={handleClick} className='buton-hr'>Feedback intermediar</button>}
+                    {/* {currentUser.functie_id==='HR' && 
+                        <button onClick={handleClickHR} className='buton-hr'>Feedback</button>} */}
+                    {currentUser.functie_id === 'C' || currentUser.functie_id === 'D' ?
+                        <div>
+                            <div>
+                                <h3>eNPS</h3>
+                                {isNPS && <p>{NPS}</p>}
+                            </div>    
+                            <button onClick={handleClickLaunch} className='buton-hr'>Lanseaza</button>
+                            <button onClick={handleClickView} className='buton-hr'>Vizualizeaza</button>
+                        </div>
+                        : <></>
+                    }
                     </div>
                 </div>
                 {/* <h1>{isLoggedIn}</h1> */}

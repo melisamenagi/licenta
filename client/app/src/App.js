@@ -26,6 +26,10 @@ import FormManagement from './components/FeedbackIntermediar/FormManagement';
 import Todo from './components/NavBar/Todo';
 import Done from './components/NavBar/Done';
 import TrainingFeedbackDone from './components/LearningPlan/TrainingFeedbackDone';
+import NPS from './components/Indicator/NPS';
+import Indicators from './components/NavBar/Indicators';
+import EES from './components/Indicator/EES';
+import ESI from './components/Indicator/ESI';
 
 function App() {
   const isLoggedIn = useSelector(state => store.getState().isLoggedIn)
@@ -64,7 +68,7 @@ function App() {
           <Routes>
           {/* {isLoggedIn && <Navbar />} */}
             <Route path="/" exact element={ <LandingPage />}></Route>
-            {/* <Route path='/login' element={<GoogleButton onClick={handleGoogleLogin}/>}></Route> */} */}
+            {/* <Route path='/login' element={<GoogleButton onClick={handleGoogleLogin}/>}></Route> */}
             <Route path='/login/success' element={<LoginSuccess />}></Route>
             <Route exact path='/login/redirect'>Error logging in.</Route>
             <Route path='/dashboard' element={<Dashboard />}>
@@ -78,9 +82,13 @@ function App() {
               <Route path='comunitate/management' element={<ComunitateManagement />}></Route>
               <Route path='departament/management' element={<DepartamentManagement />}></Route>
               <Route path='comunitate/hr' element={<ComunitateList />}></Route>
+              <Route path='indicators' element={<Indicators />}></Route>
               <Route path='training/:entitate/:id' element={<TrainingFeedback />}></Route>
               <Route path='training/:entitate/:id/feedback' element={<TrainingFeedbackDone />}></Route>
               <Route path='training/management/:entitate/:id' element={<TrainingFeedbackManagement />}></Route>
+              <Route path='indicator/:entitate/:id/eNPS' element={<NPS />}></Route>
+              <Route path='indicator/:entitate/:id/EES' element={<EES />}></Route>
+              <Route path='indicator/:entitate/:id/ESI' element={<ESI />}></Route>
               <Route path='todo' element={<Todo />}></Route>
               <Route path='done' element={<Done />}></Route>
             </Route>

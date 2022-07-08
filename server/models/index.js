@@ -7,6 +7,8 @@ const TrainingModel = require("./training")
 const TrainingFeedbackModel = require("./training_feedback")
 const IntermediarModel = require("./intermediar")
 const PersonalTrainingsModel = require("./personal_trainings")
+const IndicatorModel = require("./indicator")
+const IndicatorFeedbackModel = require("./indicator_feedback")
 
 const User = UserModel(db, Sequelize)
 const MemberInfo = MemberInfoModel(db, Sequelize)
@@ -15,6 +17,8 @@ const Training = TrainingModel(db, Sequelize)
 const TrainingFeedback = TrainingFeedbackModel(db, Sequelize)
 const Intermediar = IntermediarModel(db, Sequelize)
 const PersonalTrainings = PersonalTrainingsModel(db, Sequelize)
+const Indicator = IndicatorModel(db, Sequelize)
+const IndicatorFeedback = IndicatorFeedbackModel(db, Sequelize)
 
 module.exports = {
     User,
@@ -23,5 +27,7 @@ module.exports = {
     Training,
     TrainingFeedback,
     Intermediar,
-    PersonalTrainings
+    PersonalTrainings,
+    Indicator,
+    IndicatorFeedback
 }
