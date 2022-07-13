@@ -27,7 +27,7 @@ import Todo from './components/NavBar/Todo';
 import Done from './components/NavBar/Done';
 import TrainingFeedbackDone from './components/LearningPlan/TrainingFeedbackDone';
 import NPS from './components/Indicator/NPS';
-import Indicators from './components/NavBar/Indicators';
+import IndicatorsHR from './components/Indicator/IndicatorsHR';
 import EES from './components/Indicator/EES';
 import ESI from './components/Indicator/ESI';
 
@@ -82,7 +82,7 @@ function App() {
               <Route path='comunitate/management' element={<ComunitateManagement />}></Route>
               <Route path='departament/management' element={<DepartamentManagement />}></Route>
               <Route path='comunitate/hr' element={<ComunitateList />}></Route>
-              <Route path='indicators' element={<Indicators />}></Route>
+              <Route path='indicators' element={<IndicatorsHR />}></Route>
               <Route path='training/:entitate/:id' element={<TrainingFeedback />}></Route>
               <Route path='training/:entitate/:id/feedback' element={<TrainingFeedbackDone />}></Route>
               <Route path='training/management/:entitate/:id' element={<TrainingFeedbackManagement />}></Route>

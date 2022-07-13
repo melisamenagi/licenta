@@ -33,8 +33,47 @@
 }
 
 .buton-hr {
-    margin-top: 50px;
+    width: fit-content;
+    color: #fff;
+    margin-right: 10px;
+    font-size: larger;
+    box-sizing: border-box;
+    border-radius: 5px;
+    font-size: 1.2em;
+    font-weight: 700;
     font-family: Nunito;
+}
+
+.buton-hr:first-of-type {
+    background-color: #519FE0;
+    border: 4px solid #519FE0;
+}
+
+#stop-hr {
+    background-color: #000044;
+    border: 4px solid #000044
+}
+
+.buton-hr:last-of-type {
+    background-color: #BD6189;
+    border: 4px solid #BD6189;
+}
+
+.eNPS {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 150px;
+    height: 30px;
+    margin-bottom: 20px;
+}
+
+.eNPS>h2 {
+    color: #BD6189;
+}
+
+.eNPS>h3 {
+    padding: 0%;
 }
 
 

@@ -4,6 +4,7 @@ import { store } from "../../features/store"
 import { useSelector } from "react-redux"
 import Axios from 'axios'
 import { useEffect, useState } from 'react'
+import './IndicatorItem.css'
 
 function IndicatorItem({entitate}){
     const [NPS, setNPS] = useState(0)
@@ -37,7 +38,7 @@ function IndicatorItem({entitate}){
     }
 
     return(
-        <article>
+        <article className='indicator-item'>
             <h1>{entitate}</h1>
             <h2>{NPS}</h2>
         </article>

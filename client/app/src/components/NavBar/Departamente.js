@@ -29,7 +29,7 @@ function Departamente(){
 
     return(
         <div className="container">
-            <h1>Selecteaza un departament</h1>
+            <h1>Selectează un departament</h1>
             <div className="departamente-container">
                 {departamente.map((item) => {
                 // return <Departament key={departamente.indexOf(item)} name={item} />

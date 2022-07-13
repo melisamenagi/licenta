@@ -36,49 +36,53 @@ function TrainingFeedback(){
 
     return(
         <div className='container-feedback'>
-            <div>
-                <img className="img-feedback" src={require("../../assets/feedback.png")}/>
+            <div className="img-feedback">
+                <img src={require("../../assets/Feedback wanted.png")}/>
             </div>
             <div className='form-feedback'>
-                <h1>Te rugam să completezi formularul de feedback</h1>
+                <p>Tema</p>
                 <h1>{denumire}</h1>
+                <p>Speaker</p>
                 <h2>{speaker}</h2>
-                <label>
-                    Tema propusa
+                <div className='form'>
+                    <label for='tema'>Cum ți s-a părut tema?</label>
                     <div>
-                        <input
-                            type="text"
+                        <textarea
+                            // type="text"
                             value={tema}
+                            name='tema'
                             onChange={(e) => setTema(e.currentTarget.value)}
                         />
                     </div>
-                </label>
-                <label>
-                    Interactiunea cu speakerul
-                    <div>
-                        <input
-                            type="text"
-                            value={speakerFb}
-                            onChange={(e) => setSpeakerFb(e.currentTarget.value)}
-                        />
-                    </div>
-                </label>
-                <label>
-                    Raport practica/teorie
-                    <div className='raport'>
-                        <p>Teorie</p>
-                        <input
-                            type="range"
-                            id="raport"
-                            min="1"
-                            max="5"
-                            value={raport}
-                            onChange={(e) => setRaport(e.currentTarget.value)}
-                        />
-                        <p>Practica</p>
-                    </div>
-                </label>
-                <button type="submit" className="submitbutton" onClick={handleFeedback}>Ok</button>
+                </div>
+                <div className='form'>
+                    <label for='speaker'>Cum a fost interacțiunea cu speakerul?</label>
+                        <div>
+                            <textarea
+                                // type="textarea"
+                                value={speakerFb}
+                                name='speaker'
+                                onChange={(e) => setSpeakerFb(e.currentTarget.value)}
+                            />
+                        </div>
+                </div>
+                <div className='form'>
+                    <label for='raportInput'>Cum ai nota raportul dintre partea teoretică și cea practică?</label>
+                        <div className='raport'>
+                            <p>Teorie</p>
+                            <input
+                                type="range"
+                                id="raport"
+                                min="1"
+                                max="5"
+                                value={raport}
+                                name='raportInput'
+                                onChange={(e) => setRaport(e.currentTarget.value)}
+                            />
+                            <p>Practică</p>
+                        </div>
+                </div>
+                <button type="submit" className="submitbutton" onClick={handleFeedback}>OK</button>
             </div>
         </div>
     )

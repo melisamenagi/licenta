@@ -22,7 +22,7 @@
     justify-content: space-evenly;
 }
 
-.feedback, button {
+/* .feedback, button {
     background-color: #3B39B1;
     color: #fff;
     font-size: larger;
@@ -30,4 +30,4 @@
     border: 2px solid #3B39B1;
     box-sizing: border-box;
     border-radius: 5px;
-}
+} */

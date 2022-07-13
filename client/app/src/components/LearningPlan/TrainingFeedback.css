@@ -4,23 +4,59 @@
     align-content: flex-start;
     margin: 0px;
     padding: 0px;
+    background-image: url('../../assets/background-01.png');
+    background-size: cover;
+    background-repeat: no-repeats;
+    height: fit-content;
+    min-height: 92vh;
 }
 
 .img-feedback {
-    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 50vw;
 }
 
+.img-feedback>img{
+    width: 400px;
+    height: 500px;
+}
+
 .form-feedback {
-    padding-left: 50px;
+    padding-left: 200px;
 }
 
-label>div{
-    padding: 10px 0px;
+.form-feedback>p:first-of-type {
+    padding-top: 50px;
 }
 
-input {
-    width: 200px;
+.form-feedback>p {
+    padding-left: 0%;
+    font-size: large;
+}
+
+.form-feedback>h1 {
+    color: #BD6189;
+    font-weight: 700;
+    margin: 15px 0px;
+}
+
+.form>label{
+    margin: 10px 0px;
+    font-size: large;
+}
+
+.form {
+    margin: 15px 0px;
+}
+
+label+div{
+    padding: 15px 0px;
+}
+
+input[type=text], textarea {
+    width: 400px;
     height: 30px;
     border: 1px solid #00043A;
     box-sizing: border-box;
@@ -46,4 +82,28 @@ input[type=text]::placeholder {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
+}
+
+.raport>p {
+    padding: 0%;
+}
+
+input#raport {
+    margin: 0px 50px;
+    width: 250px;
+}
+
+.submitbutton {
+    width: fit-content;
+    background-color: #BD6189;
+    color: #fff;
+    font-size: larger;
+    margin: 10px 170px;
+    padding: 0px 20px;
+    border: 4px solid #BD6189;
+    box-sizing: border-box;
+    border-radius: 5px;
+    font-size: 1.4em;
+    font-weight: 700;
+    font-family: Nunito;
 }

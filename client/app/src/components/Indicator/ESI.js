@@ -1,6 +1,7 @@
 import { useLocation, useParams } from 'react-router-dom'
 import { useState } from 'react'
 import Axios from 'axios'
+import "./ESI.css"
 
 function ESI() {
     let { entitate, id } = useParams()
@@ -18,189 +19,194 @@ function ESI() {
     }
 
     return(
-        <div>
-            <h1>Bine ai venit in formularul de feedback Employee Satisfaction Index pentru {entitate}!</h1>
-                <h2>1.	Înțeleg cu certitudine obiectivele strategice ale organizației</h2>
-                    <label>Complet in dezacord</label>
-                        <input
-                            type="range"
-                            min="1"
-                            max="5"
-                            id="q1"
-                        />
-                    <label>Complet de acord</label>
-                <h2>2.	Mă bucur că sunt un membru al echipei</h2>
-                    <label>Complet in dezacord</label>
-                        <input
-                            type="range"
-                            min="1"
-                            max="5"
-                            id="q2"
-                        />
-                    <label>Complet de acord</label>
-                <h2>3.	Echipa este o inspirație pentru mine ca să dau ce e mai bun</h2>
-                    <label>Complet in dezacord</label>
-                        <input
-                            type="range"
-                            min="1"
-                            max="5"
-                            id="q3"
-                        />
-                    <label>Complet de acord</label>
-                <h2>4.	Echipa îmi oferă suport oricând am nevoie</h2>
-                    <label>Complet in dezacord</label>
-                        <input
-                            type="range"
-                            min="1"
-                            max="5"
-                            id="q4"
-                        />
-                    <label>Complet de acord</label>
-                <h2>5.	Am dificultăți în a accesa informații pentru a lua decizii mai bune</h2>
-                    <label>Complet in dezacord</label>
-                        <input
-                            type="range"
-                            min="1"
-                            max="5"
-                            id="q5"
-                        />
-                    <label>Complet de acord</label>
-                <h2>6.	Dacă apare o problemă, știu la cine pot apela</h2>
-                    <label>Complet in dezacord</label>
-                        <input
-                            type="range"
-                            min="1"
-                            max="5"
-                            id="q6"
-                        />
-                    <label>Complet de acord</label>
-                <h2>7.	Organizația mă informează despre resursele și instrumentele pentru a îmi realiza activitatea</h2>
-                    <label>Complet in dezacord</label>
-                        <input
-                            type="range"
-                            min="1"
-                            max="5"
-                            id="q7"
-                        />
-                    <label>Complet de acord</label>
-                <h2>8.	Managerii mă încurajează să îmi depun efortul</h2>
-                    <label>Complet in dezacord</label>
-                        <input
-                            type="range"
-                            min="1"
-                            max="5"
-                            id="q8"
-                        />
-                    <label>Complet de acord</label>
-                <h2>9.	Simt că sunt răsplătit pentru dedicarea către activitatea mea din organizație</h2>
-                    <label>Complet in dezacord</label>
-                        <input
-                            type="range"
-                            min="1"
-                            max="5"
-                            id="q9"
-                        />
-                    <label>Complet de acord</label>
-                <h2>10.	Simt că opiniile mele sunt auzite și apreciate de către manageri</h2>
-                    <label>Complet in dezacord</label>
-                        <input
-                            type="range"
-                            min="1"
-                            max="5"
-                            id="q10"
-                        />
-                    <label>Complet de acord</label>
-                <h2>11.	Experimentez și oportunități de dezvoltare personală pe lângă realizarea anumitor taskuri</h2>
-                    <label>Complet in dezacord</label>
-                        <input
-                            type="range"
-                            min="1"
-                            max="5"
-                            id="q11"
-                        />
-                    <label>Complet de acord</label>
-                <h2>12.	Echipa de management mă implică în procesul decizional</h2>
-                    <label>Complet in dezacord</label>
-                        <input
-                            type="range"
-                            min="1"
-                            max="5"
-                            id="q12"
-                        />
-                    <label>Complet de acord</label>
-                <h2>13.	Consider că sunt apreciat de managerul meu</h2>
-                    <label>Complet in dezacord</label>
-                        <input
-                            type="range"
-                            min="1"
-                            max="5"
-                            id="q13"
-                        />
-                    <label>Complet de acord</label>
-                <h2>14.	Consider că îmi depășesc limitele pentru a îndeplini un task</h2>
-                    <label>Complet in dezacord</label>
-                        <input
-                            type="range"
-                            min="1"
-                            max="5"
-                            id="q14"
-                        />
-                    <label>Complet de acord</label>
-                <h2>15.	Consider că activitatea mea în organizație face o diferență pozitivă în viața altei persoane</h2>
-                    <label>Complet in dezacord</label>
-                        <input
-                            type="range"
-                            min="1"
-                            max="5"
-                            id="q15"
-                        />
-                    <label>Complet de acord</label>
-                <h2>16. Consider că echipa de management îmi respectă timpul personal</h2>
-                    <label>Complet in dezacord</label>
-                        <input
-                            type="range"
-                            min="1"
-                            max="5"
-                            id="q16"
-                        />
-                    <label>Complet de acord</label>
-                <h2>17.	Primesc feedback constructiv din partea managerului</h2>
-                    <label>Complet in dezacord</label>
-                        <input
-                            type="range"
-                            min="1"
-                            max="5"
-                            id="q17"
-                        />
-                    <label>Complet de acord</label>
-                <h2>18.	Simt că managerul înțelege diferența și balansul dintre viața personală și activitatea în organizație</h2>
-                    <label>Complet in dezacord</label>
-                        <input
-                            type="range"
-                            min="1"
-                            max="5"
-                            id="q18"
-                        />
-                    <label>Complet de acord</label>
-                <h2>19.	Consider că managerul tratează toți membrii în mod egal</h2>
-                    <label>Complet in dezacord</label>
-                        <input
-                            type="range"
-                            min="1"
-                            max="5"
-                            id="q19"
-                        />
-                    <label>Complet de acord</label>
-                <h2>20.	Simt că sunt satisfăcut cu activitatea în organizație în general</h2>
-                    <label>Complet in dezacord</label>
-                        <input
-                            type="range"
-                            min="1"
-                            max="5"
-                            id="q20"
-                        />
-                    <label>Complet de acord</label>s
-                <button type="submit" onClick={handleClick}>OK</button>
+        <div className='container-feedback'>
+            <div className="img-feedback">
+                <img src={require("../../assets/Feedback wanted.png")}/>
+            </div>
+            <div className='form-esi'>
+                <h2>Te rugăm să completezi Employee Satisfaction Index pentru {entitate}!</h2>
+                    <p>Înțeleg cu certitudine obiectivele strategice ale organizației</p>
+                        <label>Complet in dezacord</label>
+                            <input
+                                type="range"
+                                min="1"
+                                max="5"
+                                id="q1"
+                            />
+                        <label>Complet de acord</label>
+                    <p>Mă bucur că sunt un membru al echipei</p>
+                        <label>Complet in dezacord</label>
+                            <input
+                                type="range"
+                                min="1"
+                                max="5"
+                                id="q2"
+                            />
+                        <label>Complet de acord</label>
+                    <p>Echipa este o inspirație pentru mine ca să dau ce e mai bun</p>
+                        <label>Complet in dezacord</label>
+                            <input
+                                type="range"
+                                min="1"
+                                max="5"
+                                id="q3"
+                            />
+                        <label>Complet de acord</label>
+                    <p>Echipa îmi oferă suport oricând am nevoie</p>
+                        <label>Complet in dezacord</label>
+                            <input
+                                type="range"
+                                min="1"
+                                max="5"
+                                id="q4"
+                            />
+                        <label>Complet de acord</label>
+                    <p>Am dificultăți în a accesa informații pentru a lua decizii mai bune</p>
+                        <label>Complet in dezacord</label>
+                            <input
+                                type="range"
+                                min="1"
+                                max="5"
+                                id="q5"
+                            />
+                        <label>Complet de acord</label>
+                    <p>Dacă apare o problemă, știu la cine pot apela</p>
+                        <label>Complet in dezacord</label>
+                            <input
+                                type="range"
+                                min="1"
+                                max="5"
+                                id="q6"
+                            />
+                        <label>Complet de acord</label>
+                    <p>Organizația mă informează despre resursele și instrumentele pentru a îmi realiza activitatea</p>
+                        <label>Complet in dezacord</label>
+                            <input
+                                type="range"
+                                min="1"
+                                max="5"
+                                id="q7"
+                            />
+                        <label>Complet de acord</label>
+                    <p>Managerii mă încurajează să îmi depun efortul</p>
+                        <label>Complet in dezacord</label>
+                            <input
+                                type="range"
+                                min="1"
+                                max="5"
+                                id="q8"
+                            />
+                        <label>Complet de acord</label>
+                    <p>Simt că sunt răsplătit pentru dedicarea către activitatea mea din organizație</p>
+                        <label>Complet in dezacord</label>
+                            <input
+                                type="range"
+                                min="1"
+                                max="5"
+                                id="q9"
+                            />
+                        <label>Complet de acord</label>
+                    <p>Simt că opiniile mele sunt auzite și apreciate de către manageri</p>
+                        <label>Complet in dezacord</label>
+                            <input
+                                type="range"
+                                min="1"
+                                max="5"
+                                id="q10"
+                            />
+                        <label>Complet de acord</label>
+                    <p>Experimentez și oportunități de dezvoltare personală pe lângă realizarea anumitor taskuri</p>
+                        <label>Complet in dezacord</label>
+                            <input
+                                type="range"
+                                min="1"
+                                max="5"
+                                id="q11"
+                            />
+                        <label>Complet de acord</label>
+                    <p>Echipa de management mă implică în procesul decizional</p>
+                        <label>Complet in dezacord</label>
+                            <input
+                                type="range"
+                                min="1"
+                                max="5"
+                                id="q12"
+                            />
+                        <label>Complet de acord</label>
+                    <p>Consider că sunt apreciat de managerul meu</p>
+                        <label>Complet in dezacord</label>
+                            <input
+                                type="range"
+                                min="1"
+                                max="5"
+                                id="q13"
+                            />
+                        <label>Complet de acord</label>
+                    <p>Consider că îmi depășesc limitele pentru a îndeplini un task</p>
+                        <label>Complet in dezacord</label>
+                            <input
+                                type="range"
+                                min="1"
+                                max="5"
+                                id="q14"
+                            />
+                        <label>Complet de acord</label>
+                    <p>Consider că activitatea mea în organizație face o diferență pozitivă în viața altei persoane</p>
+                        <label>Complet in dezacord</label>
+                            <input
+                                type="range"
+                                min="1"
+                                max="5"
+                                id="q15"
+                            />
+                        <label>Complet de acord</label>
+                    <p>Consider că echipa de management îmi respectă timpul personal</p>
+                        <label>Complet in dezacord</label>
+                            <input
+                                type="range"
+                                min="1"
+                                max="5"
+                                id="q16"
+                            />
+                        <label>Complet de acord</label>
+                    <p>Primesc feedback constructiv din partea managerului</p>
+                        <label>Complet in dezacord</label>
+                            <input
+                                type="range"
+                                min="1"
+                                max="5"
+                                id="q17"
+                            />
+                        <label>Complet de acord</label>
+                    <p>Simt că managerul înțelege diferența și balansul dintre viața personală și activitatea în organizație</p>
+                        <label>Complet in dezacord</label>
+                            <input
+                                type="range"
+                                min="1"
+                                max="5"
+                                id="q18"
+                            />
+                        <label>Complet de acord</label>
+                    <p>Consider că managerul tratează toți membrii în mod egal</p>
+                        <label>Complet in dezacord</label>
+                            <input
+                                type="range"
+                                min="1"
+                                max="5"
+                                id="q19"
+                            />
+                        <label>Complet de acord</label>
+                    <p>Simt că sunt satisfăcut cu activitatea în organizație în general</p>
+                        <label>Complet in dezacord</label>
+                            <input
+                                type="range"
+                                min="1"
+                                max="5"
+                                id="q20"
+                            />
+                        <label>Complet de acord</label>
+                    <button type="submit" className='buttonESI' onClick={handleClick}>OK</button>
+            </div>
         </div>
     )
 }

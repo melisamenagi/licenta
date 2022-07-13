@@ -1,26 +1,56 @@
 .done-container {
+    background-image: url('../../assets/background-01.png');
+    background-size: cover;
+    background-repeat: no-repeats;
+    height: fit-content;
+    min-height: 92vh;
+    transform: scaleX(-1);
     display: flex;
     flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+    /* width: 100vw; */
 }
 
 .done-info-container {
-    width: 50%;
+    position: relative;
+    transform: scaleX(-1);
+    width: 500px;
     display: flex;
     flex-flow: column wrap;
     gap: 10px;
+    padding-left: 200px;
+    padding-top: 20px;
 }
 
-.done-info-container h1 {
-    padding-left: 15%;
-    margin: 30px 0px 10px;
+.done-info-container>p {
+    padding-left: 0%;
+    font-size: large;
 }
 
-.done-info-container h2,h3,p {
-    padding-left: 15%;
+.done-info-container>p:first-of-type {
+    padding-top: 60px;
+}
+
+.done-info-container>h1 {
+    color: #BD6189;
+    font-weight: 700;
     margin: 5px 0px;
 }
 
-.submit-button{
+.done-info-container>h2 {
+    margin: 3px 0 5px 0;
+    padding: 0;
+}
+
+.done-info-container>h3 {
+    margin: 10px 0 5 0px;
+    padding: 0%;
+    font-size: 23;
+}
+
+
+.submitbutton{
     margin-left: 15%;
     width: 190px;
     display: inline-flex;
@@ -30,15 +60,43 @@
 }
 
 .done-edit-container {
+    position: absolute;
+    transform: scaleX(-1);
+    width: 380px;
+    height: 400px;
+    left: 160px;
+    top: 170px;
     display: flex;
     flex-flow: column wrap;
-    gap: 40px;
-    margin-top: 230px;
+    gap: 20px;
+    background: #EDE7F4;
+    border-radius: 31px;
+    /* margin-top: 230px; */
+}
+
+.done-edit-container>textarea {
+    margin-left: 30px;
+    width: 300px;
+}
+
+.done-edit-container .raport{
+    margin-left: 30px;
+}
+
+.done-edit-container .raport>input[type=range] {
+    margin: 0 30px;
 }
 
 .done-button-container {
+    margin-top: 20px;
     display: flex;
     flex-direction: row;
-    gap: 20px;
     justify-content: center;
+    gap: 20px;
+}
+
+.done-button-container>button {
+    margin: 0px;
+    padding: 0px 10px;
+    width: fit-content;
 }

@@ -44,25 +44,27 @@ function TrainingFeedbackManagement(){
 );
 
     return(
-        <div className="container">
+        <div className="container-management">
+            <p>Tema</p>
             <h1>{denumire}</h1>
-            <h3>{data}</h3>
+            <p>Data</p>
+            <h2>{data}</h2>
+            <p>Speaker</p>
             <h2>{speaker}</h2>
-            {/* <ul>{listTemaFb}</ul> */}
-            <h3>Tema</h3>
+            <p>Cum ți s-a părut tema?</p>
             <div className="punct-container">
                 {tema.map((item) => {
                 return <article className='punct-item'>{item}</article>
                 })}
             </div>
-            <h3>Speaker</h3>
+            <p>Cum a fost interacțiunea cu speakerul?</p>
             <div className="punct-container">
                 {speakerFb.map((item) => {
                 return <article className='punct-item'>{item}</article>
                 })}
             </div>
-            <h3>Raport practica/teorie</h3>
-            {raport}
+            <p>Cum ai nota raportul dintre  partea teoretică și cea practică?</p>
+            <h1>{raport}</h1>
         </div>
     )
 }

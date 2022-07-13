@@ -51,28 +51,47 @@ function TrainingFeedbackDone(){
     return(
         <div className="done-container">
             <div className="done-info-container">
+                <p>Tema</p>
                 <h1>{denumire}</h1>
-                <h3>{data}</h3>
+                <p>Data</p>
+                <h2>{data}</h2>
+                <p>Speaker</p>
                 <h2>{speaker}</h2>
-                <h3>Tema</h3>
-                <p>{tema}</p>
-                <h3>Speaker</h3>
-                <p>{speakerFb}</p>
-                <h3>Raport practica/teorie</h3>
-                <p>{raport}</p>
-                <button onClick={() => setEditFeedback(true)} className='submit-button'>Edit feedback</button>
+                <p>Cum ți s-a părut tema?</p>
+                <h3>{tema}</h3>
+                <p>Cum a fost interacțiunea cu speakerul?</p>
+                <h3>{speakerFb}</h3>
+                <p>Cum ai nota raportul dintre  partea teoretică și cea practică?</p>
+                <h3>{raport}</h3>
+                <button onClick={() => setEditFeedback(true)} className='submitbutton'>Edit feedback</button>
             </div>
             {editFeedback && 
             <div className="done-edit-container">
-                <input type="text" placeholder='Tema' onChange={(e) => setTema(e.currentTarget.value)}/>
-                <input type="text" placeholder='Speaker' onChange={(e) => setSpeakerFb(e.currentTarget.value)}/>
-                <input
+                <p>Cum ți s-a părut tema?</p>
+                <textarea onChange={(e) => setTema(e.currentTarget.value)}/>
+                <p>Cum a fost interacțiunea cu speakerul?</p>
+                <textarea onChange={(e) => setSpeakerFb(e.currentTarget.value)}/>
+                <p>Cum ai nota raportul dintre  partea teoretică și cea practică?</p>
+                <div className='raport'>
+                            <p>Teorie</p>
+                            <input
+                                type="range"
+                                min="1"
+                                max="5"
+                                value={raport}
+                                name='raportInput'
+                                onChange={(e) => setRaport(e.currentTarget.value)}
+                            />
+                            <p>Practică</p>
+                        </div>
+
+                {/* <input
                         type="range"
                         id="raport"
                         min="1"
                         max="5"
                         onChange={(e) => setRaport(e.currentTarget.value)}
-                />
+                /> */}
                 <div className="done-button-container">
                     <button onClick={handleSubmit} className='submitbutton'>Submit</button>
                     <button onClick={handleCancel} className='submitbutton'>Cancel</button>

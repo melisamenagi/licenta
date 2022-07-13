@@ -15,6 +15,7 @@ function Profil(){
     const dispatch = useDispatch();
     const [entitate, setEntitate] = useState("")
     const [isNPS, setIsNPS] = useState(false)
+    const [isNPSVisible, setIsNPSVisible] =useState(false)
     const [NPS, setNPS] = useState(0)
 
     useEffect(() => {
@@ -44,6 +45,15 @@ function Profil(){
             indicator: "eNPS"
         }).then(response => {
             console.log(response.data)
+            setIsNPSVisible(true)
+            // getFeedback()
+        }).catch(err => console.log(err))    
+    }
+
+    const handleClickEnd = () => {
+        Axios.patch("http://localhost:3001/api/indicator/Human Resources/eNPS").then(response => {
+            console.log(response.data)
+            setIsNPSVisible(false)
             // getFeedback()
         }).catch(err => console.log(err))    
     }
@@ -99,12 +109,13 @@ function Profil(){
                         <button onClick={handleClickHR} className='buton-hr'>Feedback</button>} */}
                     {currentUser.functie_id === 'C' || currentUser.functie_id === 'D' ?
                         <div>
-                            <div>
-                                <h3>eNPS</h3>
-                                {isNPS && <p>{NPS}</p>}
+                            <div className="eNPS">
+                                <h3>employee Net Promoter Score - eNPS</h3>
+                                {isNPS && <h2>{NPS}</h2>}
                             </div>    
-                            <button onClick={handleClickLaunch} className='buton-hr'>Lanseaza</button>
-                            <button onClick={handleClickView} className='buton-hr'>Vizualizeaza</button>
+                            <button onClick={handleClickLaunch} className='buton-hr'>Lansează eNPS</button>
+                            {isNPSVisible && <button onClick={handleClickEnd} className='buton-hr' id='stop-hr'>Stop eNPS</button>}
+                            <button onClick={handleClickView} className='buton-hr'>Vizualizează eNPS</button>
                         </div>
                         : <></>
                     }

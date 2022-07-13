@@ -32,7 +32,9 @@ function Indicator({id,indicator, entitate}){
 
     return(
         <article className='training'>
+            <p>indicator</p>
             <h1>{indicator}</h1>
+            <p>entitate</p>
             <h2>{entitate}</h2>
             <button onClick={handleClick}>Feedback</button>
             {/* {currentUser.functie_id === 'O' && indicator === "eNPS" && <Link to={`/dashboard/indicator/${entitate}/${id}`} className="feedback" style={{ textDecoration: 'none' }} state={{indicator: indicator}}>Feedback</Link>} */}

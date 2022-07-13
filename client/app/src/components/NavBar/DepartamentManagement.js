@@ -7,10 +7,10 @@ function DepartamentManagement(){
     const currentUser = useSelector(state => store.getState().user)
 
     return(
-        <>
-            <h1>Bine ai venit in {currentUser.first_department}!</h1>
+        <div className="container">
+            <h1>Planul de învățare {currentUser.first_department}</h1>
             <TrainingList entitate={currentUser.first_department}/>
-        </>
+        </div>
     )
 }
 

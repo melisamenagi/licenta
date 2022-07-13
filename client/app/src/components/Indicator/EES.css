@@ -1,0 +1,35 @@
+.form-ees {
+    margin-top: 20px;
+    margin-left: 50px;
+    width: 700px;
+    inline-size: 550px;
+    overflow-wrap: break-word;
+}
+
+.form-ees>h2 {
+    margin-bottom: 30px;
+}
+
+.form-ees>p {
+    margin: 20px 0;
+    padding: 0%;
+    font-size: large;
+    font-weight: 600;
+}
+
+.options {
+    display: flex;
+    justify-content: flex-start;
+    gap: 20px;
+    align-items: center;
+}
+
+.options>input[type=radio] {
+    width: 15px;
+    height: 15px;
+}
+
+.options+button {
+    margin-top: 30px;
+    margin-left: 200px;
+}

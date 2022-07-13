@@ -1,6 +1,7 @@
 import { useLocation, useParams } from 'react-router-dom'
 import { useState } from 'react'
 import Axios from 'axios'
+import "./EES.css"
 
 function EES() {
     let { entitate, id } = useParams()
@@ -20,105 +21,120 @@ function EES() {
     }
 
     return(
-        <div>
-            <h1>Bine ai venit in formularul de feedback Employee Engagement Score pentru {entitate}!</h1>
-                <h2>1.	Te simți mândru/ mândră să fii membru în organizație?</h2>
-                    <input
-                        type="radio"
-                        name="question1"
-                        value="1"
-                        />
-                    <label>Da</label>
-                    <input
-                        type="radio"
-                        name="question1"
-                        value="0"
-                        />
-                    <label>Nu</label>
-                <h2>2.	Când a fost ultima dată când ai fost apreciat pentru că ai făcut o treabă bună?</h2>
-                    <input
-                        type="radio"
-                        name="question2"
-                        value="3"
-                        />
-                    <label>Ultima saptamana</label>
-                    <input
-                        type="radio"
-                        name="question2"
-                        value="2"
-                        />
-                    <label>Ultima luna</label>
-                    <input
-                        type="radio"
-                        name="question2"
-                        value="1"
-                        />
-                    <label>Ultimul trimestru</label>
-                    <input
-                        type="radio"
-                        name="question2"
-                        value="0"
-                        />
-                    <label>Niciodata</label>
-                <h2>3.	Managerul meu este un exemplu pentru membrii organizației</h2>
-                    <input
-                        type="radio"
-                        name="question3"
-                        value="2"
-                        />
-                    <label>Da</label>
-                    <input
-                        type="radio"
-                        name="question3"
-                        value="1"
-                        />
-                    <label>Intr-o oarecare masura</label>
-                    <input
-                        type="radio"
-                        name="question3"
-                        value="0"
-                        />
-                    <label>Nu</label>
-                <h2>4.	Majoritatea sistemelor și proceselor susțin dezvoltarea și activitatea noastră</h2>
-                    <input
-                        type="radio"
-                        name="question4"
-                        value="2"
-                        />
-                    <label>Da</label>
-                    <input
-                        type="radio"
-                        name="question4"
-                        value="1"
-                        />
-                    <label>Intr-o oarecare masura</label>
-                    <input
-                        type="radio"
-                        name="question4"
-                        value="0"
-                        />
-                    <label>Nu</label>
-                <h2>5.	Organizația este un context excelent să fac o contribuție pentru dezvoltarea mea personală</h2>
-                    <input
-                        type="radio"
-                        name="question5"
-                        value="2"
-                        />
-                    <label>Da</label>
-                    <input
-                        type="radio"
-                        name="question5"
-                        value="1"
-                        />
-                    <label>Intr-o oarecare masura</label>
-                    <input
-                        type="radio"
-                        name="question5"
-                        value="0"
-                        />
-                    <label>Nu</label>
-
-                <button type="submit" onClick={handleClick}>OK</button>
+        <div className='container-feedback'>
+            <div className="img-feedback">
+                <img src={require("../../assets/Feedback wanted.png")}/>
+            </div>
+            <div className='form-ees'>
+                <h2>Te rugăm să completezi Employee 
+                    Engagement Score pentru {entitate}!</h2>
+                    <p>Te simți mândru/ mândră să fii membru în organizație?</p>
+                        <div className='options'>
+                            <input
+                                type="radio"
+                                name="question1"
+                                value="1"
+                                />
+                            <label>Da</label>
+                            <input
+                                type="radio"
+                                name="question1"
+                                value="0"
+                                />
+                            <label>Nu</label>
+                        </div>
+                    <p>Când a fost ultima dată când ai fost apreciat pentru că ai făcut o treabă bună?</p>
+                        <div className='options'>
+                            <input
+                                type="radio"
+                                name="question2"
+                                value="3"
+                                />
+                            <label>Ultima săptămână</label>
+                            <input
+                                type="radio"
+                                name="question2"
+                                value="2"
+                                />
+                            <label>Ultima lună</label>
+                            <input
+                                type="radio"
+                                name="question2"
+                                value="1"
+                                />
+                            <label>Ultimul trimestru</label>
+                            <input
+                                type="radio"
+                                name="question2"
+                                value="0"
+                                />
+                            <label>Niciodată</label>
+                        </div>
+                    <p>Managerul meu este un exemplu pentru membrii organizației</p>
+                        <div className='options'>
+                            <input
+                                type="radio"
+                                name="question3"
+                                value="2"
+                                />
+                            <label>Da</label>
+                            <input
+                                type="radio"
+                                name="question3"
+                                value="1"
+                                />
+                            <label>Într-o oarecare măsură</label>
+                            <input
+                                type="radio"
+                                name="question3"
+                                value="0"
+                                />
+                            <label>Nu</label>
+                        </div>
+                    <p>Majoritatea sistemelor și proceselor susțin dezvoltarea și activitatea noastră</p>
+                        <div className='options'>
+                            <input
+                                type="radio"
+                                name="question4"
+                                value="2"
+                                />
+                            <label>Da</label>
+                            <input
+                                type="radio"
+                                name="question4"
+                                value="1"
+                                />
+                            <label>Într-o oarecare măsură</label>
+                            <input
+                                type="radio"
+                                name="question4"
+                                value="0"
+                                />
+                            <label>Nu</label>
+                        </div>
+                    <p>Organizația este un context excelent să fac o contribuție pentru dezvoltarea mea personală</p>
+                        <div className='options'>
+                            <input
+                                type="radio"
+                                name="question5"
+                                value="2"
+                                />
+                            <label>Da</label>
+                            <input
+                                type="radio"
+                                name="question5"
+                                value="1"
+                                />
+                            <label>Într-o oarecare măsură</label>
+                            <input
+                                type="radio"
+                                name="question5"
+                                value="0"
+                                />
+                            <label>Nu</label>
+                        </div>
+                <button type="submit" className='submitbutton' onClick={handleClick}>OK</button>
+            </div>
         </div>
     )
 }

@@ -1,3 +1,6 @@
+.list {
+  width: 100%;
+}
 
 .list>h1 {
   padding-left: 3%;
@@ -5,21 +8,52 @@
 
 .trainings {
   width: 100vw;
-  display: flex;
+  display: inline-flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: flex-start;
+  column-gap: 40px;
   row-gap: 30px;
-  margin-top: 10px;
+  margin-top: 20px;
+  margin-left: 3%;
   overflow-y: auto;
 }
 
 .training-form {
   display: flex;
   flex-wrap: wrap;
-  margin: 25px;
+  margin: 1% 3%;
 }
 
 .training-form * {
   margin-right: 15px;
+}
+
+.training-form>input[type=text] {
+  height: 40px;
+}
+
+#training-button {
+  background: #519FE0;
+  border: 4px solid #519FE0;
+  box-sizing: border-box;
+  border-radius: 5px;
+  font-size: 1.4em;
+  font-weight: 600;
+  font-family: Nunito;
+  color: #fff;
+  margin: 1% 3%;
+}
+
+.trainingList-button {
+  background-color: #BD6189;
+  color: #fff;
+  font-size: larger;
+  margin: 0px 10px;
+  border: 4px solid #BD6189;
+  box-sizing: border-box;
+  border-radius: 5px;
+  font-size: 1.4em;
+  font-weight: 700;
+  font-family: Nunito;
 }

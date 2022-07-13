@@ -3,6 +3,7 @@ import { store } from "../../features/store"
 import { useSelector } from "react-redux"
 import TrainingList from "../LearningPlan/TrainingList"
 import { useLocation, useParams } from 'react-router-dom'
+import "./Done.css"
 
 function Departament(){
     const currentUser = useSelector(state => store.getState().user)
@@ -11,15 +12,13 @@ function Departament(){
 
     //aici in fct de hr sau officer duce la formularul corect 
     return (
-        <article className='departament'>
-          <div>
-            <h1>{denumire}</h1>
+        <div className='container'>
+            <h1>Planul de învățare {denumire}</h1>
             {/* <Link to={`/cocktail/${id}`} className='btn btn-primary btn-details'>
               details
             </Link> */}
             <TrainingList entitate={denumire}/>
-          </div>
-        </article>
+        </div>
       )
 }
 

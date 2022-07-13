@@ -17,8 +17,11 @@ function Training({id,entitate, denumire, data, speaker, done}){
 
     return(
         <article className='training'>
+            <p>tema</p>
             <h1>{denumire}</h1>
-            <h3>{data}</h3>
+            <p>data</p>
+            <h2>{data}</h2>
+            <p>speaker</p>
             <h2>{speaker}</h2>
             {currentUser.functie_id === 'O' && !done && <Link to={`/dashboard/training/${entitate}/${id}`} className="feedback" style={{ textDecoration: 'none' }} state={{denumire: denumire, speaker: speaker, data: data}}>Feedback</Link>}
             {currentUser.functie_id === 'O' && done && <Link to={`/dashboard/training/${entitate}/${id}/feedback`} className="feedback" style={{ textDecoration: 'none' }} state={{denumire: denumire, speaker: speaker, data: data}}>Feedback</Link>}

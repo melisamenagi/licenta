@@ -1,9 +1,10 @@
 import React from "react"
 import Axios from 'axios'
-import IndicatorItem from "../Indicator/IndicatorItem"
+import IndicatorItem from "./IndicatorItem"
 import { useState, useEffect } from 'react'
+import './IndicatorsHR.css'
 
-function Indicators(){
+function IndicatorsHR(){
     const [EES, setEES] = useState(0)
     const [ESI, setESI] = useState(0)
     const [isNPSVisible, setIsNPSVisible] =useState(true)
@@ -123,27 +124,29 @@ function Indicators(){
 
     return(
         <>
-            <div>
-                <h1>eNPS</h1>
-                <button onClick={handleClickLaunchHRNPS}>Lanseaza HR</button>
-                {isNPSVisible && <button onClick={handleClickEndHRNPS}>Incheie HR NPS</button>}
-                <button onClick={handleClickLaunchVIPNPS}>Lanseaza VIP</button>
-                {isVIPNPSVisible && <button onClick={handleClickEndVIPNPS}>Incheie VIP NPS</button>}
-                {entitati.map((item) => {
-                    return <IndicatorItem entitate={ item }/>
-                })}
+            <div className="container">
+                <p className="indicator-name">employee Net Promoter Score - eNPS</p>
+                <button className="launch-button" onClick={handleClickLaunchHRNPS}>Lansează eNPS HR</button>
+                {isNPSVisible && <button className="stop-button" onClick={handleClickEndHRNPS}>Stop eNPS HR</button>}
+                <button className="launch-button" onClick={handleClickLaunchVIPNPS}>Lansează eNPS VIP</button>
+                {isVIPNPSVisible && <button className="stop-button" onClick={handleClickEndVIPNPS}>Stop eNPS VIP</button>}
+                <div className="indicator-nps">
+                    {entitati.map((item) => {
+                        return <IndicatorItem entitate={ item }/>
+                    })}
+                </div>
                 {/* {NPSComponents} */}
-                <h1>Employee Engagement Score</h1>
-                <button onClick={handleClickLaunchEES}>Lanseaza EES</button>
-                {isEESVisible && <button onClick={handleClickEndEES}>Incheie EES</button>}
-                {EES}
-                <h1>Employee Satisfaction Index</h1>
-                <button onClick={handleClickLaunchESI}>Lanseaza ESI</button>
-                {isESIVisible && <button onClick={handleClickEndESI}>Incheie ESI</button>}
-                {ESI}
+                <p className="indicator-name">Employee Engagement Score - EES</p>
+                <button className="launch-button" onClick={handleClickLaunchEES}>Lansează EES</button>
+                {isEESVisible && <button className="stop-button" onClick={handleClickEndEES}>Stop EES</button>}
+                <h1 className="indicator-score">{EES} / 5</h1>
+                <p className="indicator-name">Employee Satisfaction Index - ESI</p>
+                <button className="launch-button" onClick={handleClickLaunchESI}>Lansează ESI</button>
+                {isESIVisible && <button className="stop-button" onClick={handleClickEndESI}>Stop ESI</button>}
+                <h1 className="indicator-score">{ESI} / 100</h1>
             </div>
         </>
     )
 }
 
-export default Indicators
+export default IndicatorsHR

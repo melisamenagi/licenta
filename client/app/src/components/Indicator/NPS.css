@@ -1,0 +1,25 @@
+.form-nps {
+    width: 450px;
+    padding-left: 200px;
+}
+
+.form-nps>h2 {
+    margin-top: 25vh;
+    font-weight: 600;
+}
+
+.form-nps>h3 {
+    padding: 20px 0;
+    font-weight: 500;
+}
+
+.raport-nps {
+    margin: 15px 0px 30px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.raport-nps>p {
+    padding: 0%;
+}

@@ -45,16 +45,20 @@ function TrainingList(props){
         setIsClicked(false)
     }
 
+    const handleCancel = () => {
+        setIsClicked(false)
+    }
+
     return(
         <div className="list">
-            <h1>Traininguri</h1>
-            {currentUser.functie_id !== 'O' && <button onClick={handleAdd}>Adauga training</button>}
+            {/* <h1>Traininguri</h1> */}
+            {(currentUser.functie_id === 'C' || currentUser.functie_id === 'D' || (currentUser.functie_id === 'HR' && props.entitate === 'Human Resources')) && <button id='training-button' onClick={handleAdd}>Adaugă training</button>}
             {isClicked && 
             <div className="training-form">
                     <input
                         type="text"
                         value={denumire}
-                        placeholder="Tema"
+                        placeholder="Tema training-ului"
                         onChange={(e) => setDenumire(e.currentTarget.value)}
                     />
                     <input
@@ -66,10 +70,11 @@ function TrainingList(props){
                     <input
                         type="text"
                         value={speaker}
-                        placeholder="Speaker"
+                        placeholder="Speaker-ul invitat"
                         onChange={(e) => setSpeaker(e.currentTarget.value)}
                     />
-                <button onClick={handleSubmit}>Ok</button>
+                <button className="trainingList-button" onClick={handleSubmit}>OK</button>
+                <button className="trainingList-button" onClick={handleCancel}>Cancel</button>
             </div>}
             <div className="trainings">
                 {trainings.map((item) => {

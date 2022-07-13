@@ -48,7 +48,7 @@ function Navbar () {
                   } */}
           {functie_id==='O' && <>
             <li>
-                <Link className='links' to='/dashboard/comunitate' style={{textDecoration: 'none'}}>Comunitate</Link>
+                <Link className='links' to='/dashboard/comunitate' style={{textDecoration: 'none'}} state={{denumire: currentUser.comunitate}}>Comunitate</Link>
             </li>
             <li>
                 <NavLink className='links' to='/dashboard/departamente' style={{textDecoration: 'none'}}>Departamente</NavLink>

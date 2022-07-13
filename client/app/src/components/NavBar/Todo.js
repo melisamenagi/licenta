@@ -42,7 +42,7 @@ function Todo(){
 
     return (
         <div className="container">
-            <h1>Acesta este feedback-ul pe care trebuie sa il oferi!</h1>
+            <h1>Acesta este feedback-ul pe care trebuie să îl oferi!</h1>
             <div className="trainings">
                 {indicators.map((item) => {
                     return <Indicator key={item.id} {...item} />
